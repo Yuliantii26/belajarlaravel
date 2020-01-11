@@ -12,10 +12,8 @@ class PostSeeder extends Seeder
     public function run()
     {
         $data = [
-            ['title'=>'Membuat website dengan laravel',
-            'content'=>'belajar laravel 6'],
-            ['title'=>'Belajar tajwid',
-            'content'=>'hukum hukum tajwid '],
+            ['title'=>'Membuat website dengan laravel','content'=>'belajar laravel 6'],
+            ['title'=>'Belajar tajwid','content'=>'hukum hukum tajwid '],
         ];
         DB::table('posts')->insert($data);
     }

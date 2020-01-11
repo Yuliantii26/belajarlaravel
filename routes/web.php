@@ -62,3 +62,71 @@ Route::get('pesan/{a?}/{b?}/{c?}',function($mkn = null,$minum=null,$harga=null){
     return "Anda Belum Memesan sesuatu ";
 });
 
+Route::get('testmodel',function(){ 
+    $testmodel= App\Post::all();
+    return $testmodel;
+});
+
+Route::get('testmodel1',function(){ 
+    $testmodel=App\Post::find(1);
+    return $testmodel;
+});
+
+Route::get('testmodel2',function(){ 
+    $testmodel=App\Post::where('title','like','%Belajar tajwid%')->get();
+    return $testmodel;
+});
+
+Route::get('testmodel3',function(){ 
+    $post = App\Post::find(1);
+    $post->title = "Ciri Keluarga Sakinah";
+    $post->save();
+    return $post;
+});
+
+Route::get('testmodel4',function(){ 
+    $post = App\Post::find(1);
+    $post->delete();
+    return $post;
+});
+
+Route::get('testmodel5',function(){
+    $post = new App\Post;
+    $post->title = "7 Amalan Pembuka Jodoh";
+    $post->content = "shalat malam, sedekah, puasa sunah, silaturahmi, senyum, doa, tobat";
+    $post->save();
+    return $post;
+});
+
+Route::get('gaji',function(){ 
+    $query= App\Penggajihan::all();
+    return $query;
+});
+
+Route::get('gaji-1',function(){
+    $query = App\Penggajihan::where('agama','=','islam')->get();
+    return $query; 
+});
+
+Route::get('gaji-2',function(){
+    $query = App\Penggajihan::select('id','nama','agama')->where('agama','=','islam')->get();
+    return $query;
+});
+
+Route::get('gaji/{id}',function($id){
+    $query = App\Penggajihan::findOrFail($id);
+    return $query;
+});
+
+Route::get('tambah-gaji',function()
+{
+    $gaji = New App\Penggajihan();
+    $gaji->nama = 'indah';
+    $gaji->jabatan = 'sekretaris';
+    $gaji->jk = 'perempuan';
+    $gaji->alamat = 'rancamanyar';
+    $gaji->agama = 'islam';
+    $gaji ->total_gaji = 500000;
+    $gaji->save();
+    return $gaji;
+});
