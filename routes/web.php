@@ -130,3 +130,9 @@ Route::get('tambah-gaji',function()
     $gaji->save();
     return $gaji;
 });
+Route::get('halo','SekolahController@hallo');
+Route::get('dunia','SekolahController@dunia');
+Route::get('haha','SekolahController@pagi');
+Route::get('wkwk','SekolahController@hahaha');
+Route::get('warnakucing/{warna?}','SekolahController@jeniskucing');
+Route::get('beli/{menu?}/{harga?}','SekolahController@warungnasi');
