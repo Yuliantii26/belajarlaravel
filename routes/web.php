@@ -136,3 +136,10 @@ Route::get('haha','SekolahController@pagi');
 Route::get('wkwk','SekolahController@hahaha');
 Route::get('warnakucing/{warna?}','SekolahController@jeniskucing');
 Route::get('beli/{menu?}/{harga?}','SekolahController@warungnasi');
+
+//CRUD BOOK
+Route::get('book','BookController@index');
+Route::get('book-create/{jdl}','BookController@create');
+Route::get('book/{id}','BookController@show');
+Route::get('book-edit/{id}/{jdl}','BookController@edit');
+Route::get('book-delete/{id}','BookController@delete');

@@ -43,11 +43,13 @@ class SekolahController extends Controller
                 echo "dengan ukuran Jumbo";
             }elseif ($harga < 15000 && $harga >= 7500) {
                 echo " dengan ukuran Medium ";
-            }elseif ($harga < 7500) {
+            }elseif ($harga < 7500 && harga >= 7500) {
                 echo "dengan ukuran Small";
+            }else{
+                echo "maaf anda salah memasukan angka";
             }
         }if (!$menu) {
-            echo "Anda belum memesan";
+            echo "silahkan masukan item terlebih dahulu";
         }
     }
 
